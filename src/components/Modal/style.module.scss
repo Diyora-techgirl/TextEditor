@@ -1,0 +1,62 @@
+
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); // semi-transparent background
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; // ensure the modal appears above other elements
+  }
+  
+  .modalContent {
+    background-color: #fff; // white background for the modal
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      text-align: center;
+    }
+  
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+  
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+  
+      &:first-of-type {
+        background-color: #007bff;
+        color: white;
+      }
+  
+      &:last-of-type {
+        background-color: #ccc;
+        color: black;
+      }
+    }
+  }
+  

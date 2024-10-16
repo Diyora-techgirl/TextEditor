@@ -1,0 +1,127 @@
+$text-color: #333;
+$bg-color: #f9f9f9;
+$primary-color: #007bff;
+$transition-duration: 0.3s;
+
+.text-editor-container {
+  font-family: 'Arial, sans-serif';
+  background-color: $bg-color;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  .select-section,
+  .button-section,
+  .color-section {
+    display: flex;
+    align-items: center;
+  }
+  .select-section{
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+   
+   
+
+  }
+
+  select,
+  input[type='text'] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: transform $transition-duration ease-in-out;
+    max-height: none; 
+    overflow: hidden; 
+
+    &:hover {
+      transform: perspective(500px) rotateX(10deg);
+    }
+  }
+  
+  button {
+    margin-right: 5px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform $transition-duration ease-in-out, box-shadow $transition-duration ease-in-out;
+
+    &:hover {
+      transform: perspective(500px) rotateY(15deg);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: perspective(500px) rotateY(0deg);
+      box-shadow: none;
+    }
+  }
+  
+  .color-section {
+    .text-color,
+    .bc-color {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+
+      input[type='color'] {
+        margin-right: 5px;
+        border: none;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: transform $transition-duration ease-in-out;
+
+        &:hover {
+          transform: perspective(500px) rotateX(10deg);
+        }
+      }
+
+      span {
+        font-size: 14px;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.editor {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  min-height: 200px;
+  transition: box-shadow $transition-duration ease-in-out;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+button[data-active='true'] {
+  background-color: #28a745;
+
+  &:hover {
+    transform: perspective(500px) rotateY(15deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: perspective(500px) rotateY(0deg);
+    box-shadow: none;
+  }
+}
